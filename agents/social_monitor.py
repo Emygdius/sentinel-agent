@@ -1,29 +1,25 @@
+"""
+Social Media Monitoring Agent for performance tracking.
+"""
+
 class SocialMonitor:
-    """
-    Agent module specifically designed for tracking performance metrics 
-    and drafting automated social content based on high-engagement themes.
-    """
-    
+    """Agent for tracking social metrics and drafting content."""
+
     def fetch_performance_metrics(self, platform="LinkedIn"):
-        # Simulating API fetch for social data analytics
+        """Simulating API fetch for social data analytics."""
         print(f"Connecting to {platform} API...")
         return {
-            "engagement_rate": 0.058, 
-            "top_performing_topic": "AI Systems Architecture",
-            "reach": 12500
+            "engagement_rate": 0.058,
+            "top_topic": "AI Systems Architecture"
         }
 
     def generate_drafts(self, metrics):
-        """
-        Uses engagement data to trigger LLM-drafting logic via Claude API.
-        """
-        topic = metrics['top_performing_topic']
-        print(f"Analyzing {topic} for content generation...")
-        
-        # Simulated LLM Output
-        return f"Draft: How {topic} is redefining GTM-Flow for 2026."
+        """Uses engagement data to trigger LLM-based drafting."""
+        topic = metrics['top_topic']
+        print(f"Analyzing {topic}...")
+        return f"Draft: How {topic} is redefining GTM-Flow."
 
 if __name__ == "__main__":
     monitor = SocialMonitor()
-    stats = monitor.fetch_performance_metrics()
-    print(f"Status: {monitor.generate_drafts(stats)}")
+    STATS = monitor.fetch_performance_metrics()
+    print(f"Status: {monitor.generate_drafts(STATS)}")
