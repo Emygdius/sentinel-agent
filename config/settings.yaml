@@ -1,0 +1,17 @@
+# Sentinel-v1 Production Configuration
+# Professional-grade external settings for agent logic
+
+agent_identity:
+  name: "Sentinel-v1"
+  version: "1.0.0"
+  provider: "Anthropic Claude-3" # Specifically targeting the tool they requested
+
+operational_routing:
+  slack_endpoint: "https://hooks.slack.com/services/sales_alerts"
+  clickup_space_id: "874521"
+  support_email: "ops@sentinel-agent.ai"
+
+system_thresholds:
+  intent_confidence_minimum: 0.85
+  retry_attempts: 3
+  log_level: "PRODUCTION"
